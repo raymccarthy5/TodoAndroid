@@ -5,7 +5,7 @@ public class TodoItem {
     private String title;
     private String description;
     private String dueDate;
-    private String status;
+    private Boolean status;
     private int userId;
 
     public int getId() {
@@ -40,11 +40,11 @@ public class TodoItem {
         this.dueDate = dueDate;
     }
 
-    public String getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 

@@ -7,6 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.example.todoandroid.Adapter.TodoAdapter;
@@ -26,8 +30,11 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TodoAdapter adapter;
 
+    private CheckBox checkBox;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -38,6 +45,16 @@ public class MainActivity extends AppCompatActivity {
         //Init with userId
         this.initToDoView(userId);
 
+    }
+
+    public void updateCheck(View view){
+
+        checkBox = (CheckBox) view;
+        Log.i("updateCheck", "updateCheck: "+checkBox.getText());
+
+        TodoApiService service = RetrofitInstance.todoApiService();
+
+        // Call the API endpoint
     }
 
     public void initToDoView(Integer userId){

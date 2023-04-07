@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -29,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -41,9 +44,9 @@ public class LoginActivity extends AppCompatActivity {
         this.password = findViewById(R.id.password);
 
         loginEmailAndPassword(this.username.getText().toString().trim(), this.password.getText().toString().trim());
-
-
     }
+
+
 
 
     public void loginEmailAndPassword(String username, String password){

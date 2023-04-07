@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"  android:layout_margin="22dp">
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_margin="22dp">
 
     <CheckBox
         android:id="@+id/checkbox_box_completed"
@@ -12,21 +12,18 @@
         android:minWidth="0dp"
         android:onClick="updateCheck"
         android:minHeight="0dp"
-        android:text="0"
-        android:textColor="@color/white"
         android:layout_alignParentStart="true"/>
 
     <TextView
-
-            android:id="@+id/todo_item_title"
+        android:id="@+id/to_do_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toStartOf="@id/delete_box"
-        tools:text="Example Item"
-        android:maxLines="1"
         android:ellipsize="end"
+        tools:text="Example Item"
         android:textSize="20dp"
         android:layout_marginLeft="6dp"
+        android:maxLines="1"
         android:layout_toEndOf="@id/checkbox_box_completed"
         android:layout_alignTop="@id/checkbox_box_completed"
         android:layout_alignBottom="@id/checkbox_box_completed"
@@ -41,19 +38,5 @@
         android:layout_centerVertical="true"/>
 
 
-<!--    <TextView-->
-<!--        android:id="@+id/todo_item_title"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textAppearance="?android:textAppearanceLarge"-->
-<!--        android:textStyle="bold"-->
-<!--        android:padding="8dp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/todo_item_description"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textAppearance="?android:textAppearanceMedium"-->
-<!--        android:padding="8dp" />-->
 
 </RelativeLayout>
