@@ -69,16 +69,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<VerificationResponse> call, Response<VerificationResponse> response) {
 
-                Log.i("responce", ""+response.body().getId());
+                Log.i("response", ""+response.body().getId());
                 if(!response.body().getVerified()){
                     Toast.makeText(LoginActivity.this, "User Credentials incorrect", Toast.LENGTH_SHORT).show();
                     return;
-
                 }
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 intent.putExtra("userId", response.body().getId());
                 startActivity(intent);
-
             }
 
             @Override

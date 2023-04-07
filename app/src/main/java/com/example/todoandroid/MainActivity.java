@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.todoandroid.Adapter.TodoAdapter;
@@ -29,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Integer userId = getIntent().getIntExtra("userId", 0);
+
+        Log.i("User Id", "id" +userId);
+
+        //Init with userId
+        this.initToDoView(userId);
+
+    }
+
+    public void initToDoView(Integer userId){
+
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
@@ -37,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         TodoApiService service = RetrofitInstance.todoApiService();
 
         // Call the API endpoint
-        Call<List<TodoItem>> call = service.getTodoItems();
+        Call<List<TodoItem>> call = service.getTodoItemsByUserId(userId);
         call.enqueue(new Callback<List<TodoItem>>() {
             @Override
             public void onResponse(Call<List<TodoItem>> call, Response<List<TodoItem>> response) {
@@ -56,5 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Failed to get todo items", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }
