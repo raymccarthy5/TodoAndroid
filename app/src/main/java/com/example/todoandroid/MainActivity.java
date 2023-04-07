@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.example.todoandroid.Adapter.TodoAdapter;
 import com.example.todoandroid.Model.TodoItem;
+import com.example.todoandroid.Service.RetrofitInstance;
 import com.example.todoandroid.Service.TodoApiService;
 
 import java.util.List;
@@ -32,14 +33,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
-        // Create a Retrofit instance
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ead2api.azurewebsites.net/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
         // Create a service instance
-        TodoApiService service = retrofit.create(TodoApiService.class);
+        TodoApiService service = RetrofitInstance.todoApiService();
 
         // Call the API endpoint
         Call<List<TodoItem>> call = service.getTodoItems();
