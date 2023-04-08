@@ -1,6 +1,7 @@
 package com.example.todoandroid.Service;
 
 import com.example.todoandroid.Model.TodoItem;
+import com.example.todoandroid.Model.UserModel;
 import com.example.todoandroid.Model.VerificationResponse;
 
 import java.util.HashMap;
@@ -24,7 +25,10 @@ public interface TodoApiService {
     @GET("TodoItem/{id}")
     Call<TodoItem> getTodoItemById(@Path("id")Integer id);
 
-    @PUT("TodoItem/")
+    @POST("UserModel")
+    Call<UserModel> createUserAccount(@Body UserModel userModel);
+
+    @POST("TodoItem/")
     Call<TodoItem> createTodoItem(@Body HashMap<String, Object> createTodoRequest);
 
     @GET("TodoItem/user/{userId}")

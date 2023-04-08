@@ -81,6 +81,8 @@ public class AddActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<TodoItem> call, Response<TodoItem> response) {
 
+                Log.i("response", "onResponse: " +response);
+
                 if(response.isSuccessful()){
                     Intent intent = new Intent(AddActivity.this, MainActivity.class);
                     intent.putExtra("userId", userId);

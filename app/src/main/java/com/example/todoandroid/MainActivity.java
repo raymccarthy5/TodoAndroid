@@ -124,12 +124,11 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<TodoItem>>() {
             @Override
             public void onResponse(Call<List<TodoItem>> call, Response<List<TodoItem>> response) {
+                Log.i("response", "onResponse: "+response);
                 if (response.isSuccessful()) {
                     List<TodoItem> todoItems = response.body();
                     adapter = new TodoAdapter(todoItems);
                     recyclerView.setAdapter(adapter);
-                } else {
-                    Toast.makeText(MainActivity.this, "Failed to get todo items", Toast.LENGTH_SHORT).show();
                 }
             }
 
