@@ -12,6 +12,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface TodoApiService {
@@ -20,6 +21,9 @@ public interface TodoApiService {
 
     @GET("TodoItem/user/{userId}")
     Call<List<TodoItem>> getTodoItemsByUserId(@Path("userId")Integer id);
+
+    @PUT("TodoItem/{id}/toggle-status")
+    Call<TodoItem> updateTodoStatus(@Path("id")Integer id);
 
     @POST("UserModel/signin")
     Call<VerificationResponse> signInUser(@Body HashMap<String, String> userCredentials);

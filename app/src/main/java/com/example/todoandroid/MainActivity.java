@@ -49,12 +49,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateCheck(View view){
 
+        //Each checbox Id stored in text string
+        //converted to integer
         checkBox = (CheckBox) view;
-        Log.i("updateCheck", "updateCheck: "+checkBox.getText());
+        Integer formattedId = Integer.parseInt(checkBox.getText().toString());
 
         TodoApiService service = RetrofitInstance.todoApiService();
 
         // Call the API endpoint
+        Call<TodoItem> call = service.updateTodoStatus(formattedId);
+
+        call.enqueue(new Callback<TodoItem>() {
+            @Override
+            public void onResponse(Call<TodoItem> call, Response<TodoItem> response) {
+                    Log.i("Response", ""+response.body());
+            }
+
+            @Override
+            public void onFailure(Call<TodoItem> call, Throwable t) {
+                Log.i("Update Unsuccessfull", "Update Unsuccessfult");
+            }
+        });
     }
 
     public void initToDoView(Integer userId){
