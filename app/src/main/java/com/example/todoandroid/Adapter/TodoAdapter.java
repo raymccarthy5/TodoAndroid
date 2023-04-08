@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +40,8 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
         //Basically on check, get id and send that in the REST request
         holder.checkBox.setText(id);
 
+        holder.deleteIcon.setId(todoItem.getId());
+
         holder.titleTextView.setSingleLine(todoItem.getStatus());
 //        holder.descriptionTextView.setText(todoItem.getDescription());
     }
@@ -53,10 +56,13 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
         public TextView descriptionTextView;
         public CheckBox checkBox;
 
+        public ImageView deleteIcon;
+
         public ViewHolder(View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.todo_item_title);
             checkBox = itemView.findViewById(R.id.checkbox_box_completed);
+            deleteIcon = itemView.findViewById(R.id.delete_box);
 //            descriptionTextView = itemView.findViewById(R.id.todo_item_description);
         }
     }

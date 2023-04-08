@@ -10,6 +10,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -24,6 +25,9 @@ public interface TodoApiService {
 
     @PUT("TodoItem/{id}/toggle-status")
     Call<TodoItem> updateTodoStatus(@Path("id")Integer id);
+
+    @DELETE("TodoItem/{id}/")
+    Call<Void> deleteTodoItem(@Path("id")Integer id);
 
     @POST("UserModel/signin")
     Call<VerificationResponse> signInUser(@Body HashMap<String, String> userCredentials);

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.todoandroid.Adapter.TodoAdapter;
@@ -29,8 +30,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TodoAdapter adapter;
-
     private CheckBox checkBox;
+    private ImageView deleteIcon;
+
+    private Integer userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Integer userId = getIntent().getIntExtra("userId", 0);
+         userId = getIntent().getIntExtra("userId", 0);
 
         Log.i("User Id", "id" +userId);
 
         //Init with userId
-        this.initToDoView(userId);
+        this.initToDoView();
 
     }
 
@@ -72,7 +75,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void initToDoView(Integer userId){
+    public void deleteItem(View view){
+
+
+        deleteIcon = (ImageView) view;
+        Log.i("Clicked", "Delete clicked"+deleteIcon.getId());
+
+        Intent intent = new Intent(MainActivity.this, ConfirmDeleteActivity.class);
+        intent.putExtra("id", deleteIcon.getId());
+        intent.putExtra("userId", userId);
+        startActivity(intent);
+    }
+
+    public void initToDoView(){
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
