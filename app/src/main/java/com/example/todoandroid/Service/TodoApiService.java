@@ -18,7 +18,13 @@ public interface TodoApiService {
     @GET("TodoItem")
     Call<List<TodoItem>> getTodoItems();
 
-    @POST("TodoItem/")
+    @PUT("TodoItem/{id}")
+    Call<TodoItem> editTodoItem(@Path("id")Integer id, @Body HashMap<String, Object> todoItem);
+
+    @GET("TodoItem/{id}")
+    Call<TodoItem> getTodoItemById(@Path("id")Integer id);
+
+    @PUT("TodoItem/")
     Call<TodoItem> createTodoItem(@Body HashMap<String, Object> createTodoRequest);
 
     @GET("TodoItem/user/{userId}")

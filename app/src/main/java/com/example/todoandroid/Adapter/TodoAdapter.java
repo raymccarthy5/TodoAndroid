@@ -33,6 +33,7 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         TodoItem todoItem = todoItems.get(position);
         holder.titleTextView.setText(todoItem.getTitle());
+
         holder.checkBox.setChecked(todoItem.getStatus());
         String id =  Integer.toString(todoItem.getId());
 
@@ -41,6 +42,8 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
         holder.checkBox.setText(id);
 
         holder.deleteIcon.setId(todoItem.getId());
+
+        holder.titleTextView.setId(todoItem.getId());
 
         holder.titleTextView.setSingleLine(todoItem.getStatus());
 //        holder.descriptionTextView.setText(todoItem.getDescription());

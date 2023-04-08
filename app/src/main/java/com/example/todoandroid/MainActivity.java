@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.todoandroid.Adapter.TodoAdapter;
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox checkBox;
     private ImageView deleteIcon;
 
+    private TextView todoItem;
+
     private Integer userId;
 
     @Override
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         userId = getIntent().getIntExtra("userId", 0);
+        userId = getIntent().getIntExtra("userId", 0);
 
         Log.i("User Id", "id" +userId);
 
@@ -80,6 +84,18 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, AddActivity.class);
         intent.putExtra("userId", userId);
         startActivity(intent);
+    }
+
+    public void navigateToEditText(View view){
+
+
+        todoItem = (TextView) view;
+        Intent intent = new Intent(MainActivity.this, EditActivity.class);
+        intent.putExtra("userId", userId);
+        intent.putExtra("id", view.getId());
+        startActivity(intent);
+
+        Log.i("id", "id: " +todoItem.getId());
     }
 
     public void deleteItem(View view){

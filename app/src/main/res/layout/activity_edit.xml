@@ -15,7 +15,7 @@
         android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/title"
+            android:id="@+id/titleEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
@@ -30,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent"></EditText>
 
         <EditText
-            android:id="@+id/description"
+            android:id="@+id/descriptionEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
@@ -41,12 +41,12 @@
             android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title">
+            app:layout_constraintTop_toBottomOf="@+id/titleEdit">
 
         </EditText>
 
         <EditText
-            android:id="@+id/dueDate"
+            android:id="@+id/dueDateEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/baseline_date_range_24"
@@ -63,7 +63,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionEdit"
             app:layout_constraintVertical_bias="0.082" />
 
         <TextView
@@ -82,7 +82,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
-        android:onClick="addTodoItem"
+        android:onClick="updateToDoItem"
         android:id="@+id/checkButtonEdit"
         android:src="@drawable/baseline_check_24"
         android:layout_height="wrap_content"
