@@ -1,7 +1,5 @@
 package com.example.todoandroid.Service;
 
-import android.content.Intent;
-
 import com.example.todoandroid.Model.TodoItem;
 import com.example.todoandroid.Model.VerificationResponse;
 
@@ -20,6 +18,9 @@ public interface TodoApiService {
     @GET("TodoItem")
     Call<List<TodoItem>> getTodoItems();
 
+    @POST("TodoItem/")
+    Call<TodoItem> createTodoItem(@Body HashMap<String, Object> createTodoRequest);
+
     @GET("TodoItem/user/{userId}")
     Call<List<TodoItem>> getTodoItemsByUserId(@Path("userId")Integer id);
 
@@ -31,4 +32,6 @@ public interface TodoApiService {
 
     @POST("UserModel/signin")
     Call<VerificationResponse> signInUser(@Body HashMap<String, String> userCredentials);
+
+
 }

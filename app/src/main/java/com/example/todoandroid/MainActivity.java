@@ -75,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void navigateToAddActivity(View view){
+
+        Intent intent = new Intent(MainActivity.this, AddActivity.class);
+        intent.putExtra("userId", userId);
+        startActivity(intent);
+    }
+
     public void deleteItem(View view){
 
 
