@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Application à faire</string>
+    <string name="sign_in">S\'identifier</string>
+    <string name="sign_up">S\'inscrire</string>
+    <string name="sign_in_hint">Nom d\'utilisateur</string>
+    <string name="email_hint">E-mail</string>
+    <string name="hint_password">Mot de passe</string>
+    <string name="text_button">S\'identifier</string>
+    <string name="text_button_sign_up">S\'inscrire</string>
+    <string name="create_account_button">Créer un compte</string>
+    <string name="signin_account_button">S\'identifier</string>
+
+    <string name="dont_have_an_account">Vous n\'avez pas de compte ?</string>
+    <string name="already_have_an_account">Vous avez déjà un compte?</string>
+
+    <string name="are_you_sure">Êtes-vous sûr de bien vouloir supprimer cet élément?</string>
+    <string name="yes_delete">Oui</string>
+    <string name="no_delete">Non</string>
+</resources>
