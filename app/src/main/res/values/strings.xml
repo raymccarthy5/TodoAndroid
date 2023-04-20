@@ -16,4 +16,9 @@
     <string name="are_you_sure">Are you sure you want to delete this item?</string>
     <string name="yes_delete">yes</string>
     <string name="no_delete">no</string>
+    <string name="add_todo_title">Add todo item</string>
+    <string name="title_hint">Title</string>
+    <string name="hint_due_date">Due date (yyyy.MM.dd)</string>
+    <string name="hint_description">Description</string>
+    <string name="title_edit_todo">Edit todo item</string>
 </resources>

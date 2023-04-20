@@ -16,4 +16,9 @@
     <string name="are_you_sure">Êtes-vous sûr de bien vouloir supprimer cet élément?</string>
     <string name="yes_delete">Oui</string>
     <string name="no_delete">Non</string>
+    <string name="add_todo_title">Ajouter un élément à faire</string>
+    <string name="title_hint">Titre</string>
+    <string name="hint_due_date">Date d\'échéance (yyyy.MM.dd)</string>
+    <string name="hint_description">Description</string>
+    <string name="title_edit_todo">Modifier l\'élément de tâche</string>
 </resources>
