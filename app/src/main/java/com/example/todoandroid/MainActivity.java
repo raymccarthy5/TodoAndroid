@@ -34,9 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private TodoAdapter adapter;
     private CheckBox checkBox;
     private ImageView deleteIcon;
-
     private TextView todoItem;
-
     private Integer userId;
 
     @Override
@@ -87,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigateToEditText(View view){
-
 
         todoItem = (TextView) view;
         Intent intent = new Intent(MainActivity.this, EditActivity.class);
